@@ -63,7 +63,7 @@ var proxy = require('redbird')({port: 80, xfwd: false});
 // OPTIONAL: Setup your proxy, customizing the agent
 var http = require('http');
 var keepAliveAgent = new http.Agent({ keepAlive: true, maxSockets: 1000 });
-var proxy = require('redbird')({port: 80, agent: });
+var proxy = require('redbird')({port: 80, agent: keepAliveAgent });
 
 // Route to any global ip
 proxy.register("optimalbits.com", "http://167.23.42.67:8000");
